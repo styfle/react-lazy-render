@@ -112,8 +112,10 @@ var LazyRender = React.createClass({displayName: "LazyRender",
     }
     // Use this height calculation for Modern browsers, it will include all the borders/margins needed to be accurate
     else {
-      var marginTop = parseInt(window.getComputedStyle(element).marginTop);
-      return elementSize(element)[1] - marginTop; //remove one margin since the margins are shared by adjacent elements
+      var marginTop = parseInt(window.getComputedStyle(element).marginTop) || 0;
+      // remove one margin since the margins are shared by adjacent elements, 
+      // the || height added to let this work in the headless browser test environment
+      return elementSize(element)[1] - marginTop || height; 
     }
 
   },
