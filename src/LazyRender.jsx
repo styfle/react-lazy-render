@@ -75,6 +75,9 @@ var LazyRender = React.createClass({
   },
 
   getHeight: function(numChildren, childHeight, maxHeight) {
+    return maxHeight;
+    // Return the maxHeight as a stop gap fix for now because the calculation below
+    // is incorrect because the getElementHeight function is slightly innacurate for unknown reasons
     var fullHeight = numChildren * childHeight;
     if (fullHeight < maxHeight) {
       return fullHeight;
@@ -105,9 +108,16 @@ var LazyRender = React.createClass({
       var paddingBottom = parseFloat(elementStyle.getPropertyValue('padding-bottom')) || 0
 
       height += borderTop + borderBottom + marginTop + marginBottom + paddingTop + paddingBottom;
+      return height;
+    }
+    // Use this height calculation for Modern browsers, it will include all the borders/margins needed to be accurate
+    else {
+      var marginTop = parseInt(window.getComputedStyle(element).marginTop) || 0;
+      // remove one margin since the margins are shared by adjacent elements, 
+      // the || height added to let this work in the headless browser test environment
+      return elementSize(element)[1] - marginTop || height; 
     }
 
-    return height;
   },
 
   getChildrenLength: function(props) {
