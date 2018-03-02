@@ -20,7 +20,7 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --inline --hot",
-    "build": "gulp build"
+    "build": "webpack --config webpack.dist.config.js"
   },
   "jest": {
     "unmockedModulePathPatterns": [
