@@ -1,9 +1,10 @@
 "use strict";
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var CodeSnippet = require('./code-snippet.jsx');
 
-var Install = React.createClass({
+var Install = createReactClass({
   render: function() {
     return (
       <div className="install">

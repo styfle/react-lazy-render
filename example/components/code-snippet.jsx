@@ -2,13 +2,15 @@
 "use strict";
 
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var cx = require('classnames');
 
-var CodeSnippet = React.createClass({
+var CodeSnippet = createReactClass({
   propTypes: {
-    language: React.PropTypes.string.isRequired,
-    toggle: React.PropTypes.bool,
-    visible: React.PropTypes.bool
+    language: PropTypes.string.isRequired,
+    toggle: PropTypes.bool,
+    visible: PropTypes.bool
   },
 
   getDefaultProps: function() {

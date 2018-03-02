@@ -2,17 +2,19 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var elementSize = require("element-size");
 
-var LazyRender = React.createClass({
+var LazyRender = createReactClass({
   propTypes: {
-    maxHeight: React.PropTypes.number.isRequired,
+    maxHeight: PropTypes.number.isRequired,
 
-    className: React.PropTypes.string,
-    itemPadding: React.PropTypes.number,
+    className: PropTypes.string,
+    itemPadding: PropTypes.number,
 
-    generatorData: React.PropTypes.array,
-    generatorFunction: React.PropTypes.func
+    generatorData: PropTypes.array,
+    generatorFunction: PropTypes.func
   },
 
   getDefaultProps: function() {

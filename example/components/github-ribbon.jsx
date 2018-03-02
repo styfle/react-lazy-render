@@ -1,8 +1,9 @@
 "use strict";
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-var GithubRibbon = React.createClass({
+var GithubRibbon = createReactClass({
   render: function() {
     var style = {
       position: 'absolute',

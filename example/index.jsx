@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 var _ = require('lodash');
 var fs = require('fs');
 
@@ -10,7 +11,7 @@ var GithubRibbon = require('./components/github-ribbon.jsx');
 var CodeSnippet = require('./components/code-snippet.jsx');
 var Install = require('./components/install.jsx');
 
-var LazyRender = require('../');
+var LazyRender = require('../src/LazyRender');
 
 var NAMES = [
   "Thea Neeld",
@@ -70,7 +71,7 @@ var basicExample = fs.readFileSync(
 );
 
 
-var Index = React.createClass({
+var Index = createReactClass({
   getInitialState: function() {
     return {
       limit: 5000
