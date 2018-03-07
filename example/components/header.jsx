@@ -1,8 +1,9 @@
 "use strict";
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-var Header = React.createClass({
+var Header = createReactClass({
   render: function() {
     return (
       <header className="header">

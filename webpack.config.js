@@ -1,5 +1,4 @@
 module.exports = {
-  cache: true,
   context: __dirname,
   entry: './example/js/index.js',
   output: {

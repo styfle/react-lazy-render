@@ -1,8 +1,9 @@
 "use strict";
 
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-var Footer = React.createClass({
+var Footer = createReactClass({
   render: function() {
     return (
       <footer className="footer">
@@ -17,7 +18,7 @@ var Footer = React.createClass({
   }
 });
 
-var OFSCredit = React.createClass({
+var OFSCredit = createReactClass({
   render: function() {
     return (
       <div className="ofs-credit">

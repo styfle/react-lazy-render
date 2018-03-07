@@ -1,14 +1,16 @@
 /* global jest, describe, it, expect */
 "use strict";
-
+jest.dontMock('prop-types');
+jest.dontMock('create-react-class');
 jest.dontMock('../LazyRender.jsx');
 jest.dontMock('element-size');
+jest.dontMock('react-dom');
 
 describe('LazyRender', function() {
   var React = require('react');
   var ReactDOM = require('react-dom');
   var LazyRender = require('../LazyRender.jsx');
-  var TestUtils = require('react-addons-test-utils');
+  var TestUtils = require('react-dom/test-utils');
 
   function makeComponent(childCount, props) {
     props = props || {};

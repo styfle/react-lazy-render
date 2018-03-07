@@ -20,10 +20,9 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --inline --hot",
-    "build": "gulp build"
+    "build": "webpack --config webpack.dist.config.js"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react"
     ],
@@ -31,24 +30,23 @@
       "js",
       "json",
       "jsx"
-    ],
-    "testFileExtensions": [
-      "js",
-      "jsx"
     ]
   },
   "license": "Apache 2.0",
   "dependencies": {
     "classnames": "^2.2.5",
     "element-size": "^1.1.1",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.5.0",
     "brfs": "^1.4.3",
     "browserify": "^13.0.1",
+    "create-react-class": "^15.6.3",
     "gulp": "^3.9.1",
     "gulp-connect": "^4.0.0",
     "gulp-duration": "0.0.0",
@@ -59,23 +57,23 @@
     "gulp-sass": "^2.3.1",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.6",
-    "jest-cli": "^12.1.0",
+    "jest-cli": "^22.4.2",
     "jsx-loader": "^0.13.2",
     "lodash": "^4.13.1",
     "node-sass": "^3.7.0",
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
-    "react": "^15.1.0",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-tools": "^0.13.3",
     "reactify": "^1.1.1",
+    "regenerator-runtime": "^0.11.1",
     "transform-loader": "^0.2.3",
     "vinyl-transform": "^1.0.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "react": "^15.1.0"
+    "react": ">=15.1.0"
   }
 }
